@@ -1,0 +1,1784 @@
+{
+  "status": "success",
+  "analysis": {
+    "sheets_found": 15,
+    "tables": {
+      "revenue": {
+        "row_count": 200,
+        "column_count": 10,
+        "primary_key": "revenue__income_",
+        "columns": [
+          {
+            "name": "revenue__income_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "invoice_number",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "customer_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "date_of_invoice",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "payment_terms",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "amount",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "sales_category",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "tax_collected",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "payment_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "mode_of_payment",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "expenses.payment_method"
+          }
+        ]
+      },
+      "expenses": {
+        "row_count": 200,
+        "column_count": 9,
+        "primary_key": "tax_paid__gst_vat_",
+        "columns": [
+          {
+            "name": "vendor_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "expense_category",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "bill_number",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "date_of_expense",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "amount",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "tax_paid__gst_vat_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "payment_method",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true
+          },
+          {
+            "name": "expense_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "linked_project_client",
+            "type": "VARCHAR",
+            "nullable": true,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      },
+      "payroll": {
+        "row_count": 200,
+        "column_count": 13,
+        "primary_key": "employee_id",
+        "columns": [
+          {
+            "name": "employee_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "employee_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "salary_wage",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "pay_period",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "date_of_payment",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "gross_pay",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "net_pay",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "deductions",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "overtime_hours",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "bonuses_incentives",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "payroll_tax_liabilities",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "payment_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "revenue.payment_status"
+          },
+          {
+            "name": "leave_balances",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      },
+      "financial_report": {
+        "row_count": 200,
+        "column_count": 23,
+        "primary_key": "total_income",
+        "columns": [
+          {
+            "name": "date",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "total_income",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "total_expenses",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "gross_profit",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "net_profit",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "assets",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "liabilities",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "equity",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "cash_inflows",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "cash_outflows",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "ar__0_30_days_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "ar__30_60_days_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "ar__60__days_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "ap__0_30_days_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "ap__30_60_days_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "ap__60__days_",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "budget",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "actual_spend",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "revenue_from_medicines",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "revenue_from_services",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "revenue_by_patient",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "tax_summary",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "source_of_profit_loss",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      },
+      "staff": {
+        "row_count": 200,
+        "column_count": 10,
+        "primary_key": "staff_id",
+        "columns": [
+          {
+            "name": "staff_id",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "role",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "department",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "year",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "month",
+            "type": "TINYINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "attendance_days",
+            "type": "TINYINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "performance_evaluation",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "training_topic",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "training_date",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      },
+      "patient_registration": {
+        "row_count": 200,
+        "column_count": 22,
+        "primary_key": "clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.s_n"
+          },
+          {
+            "name": "clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "phone_no",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "email_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "registered_date___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "billing_date___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "bill_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "enrolled_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.vitals_taken"
+          },
+          {
+            "name": "patient_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "preauthorization_code",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "preauthorization_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_code_file_number",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "coverage_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.coverage_type"
+          },
+          {
+            "name": "coverage_name",
+            "type": "VARCHAR",
+            "nullable": true,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.coverage_name"
+          },
+          {
+            "name": "enrolled_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "age",
+            "type": "TINYINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.s_n"
+          },
+          {
+            "name": "sex",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.sex"
+          },
+          {
+            "name": "blood_group",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "category",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "additional_note",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "facility_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      },
+      "patient_wait_time": {
+        "row_count": 200,
+        "column_count": 24,
+        "primary_key": "clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "age",
+            "type": "TINYINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "sex",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.sex"
+          },
+          {
+            "name": "total_wait_time",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "appointment_date_and_time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "assigned_to_speciality",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "staff.department"
+          },
+          {
+            "name": "assigned_to_role",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "assigned_to_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "coverage_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.coverage_type"
+          },
+          {
+            "name": "coverage_name",
+            "type": "VARCHAR",
+            "nullable": true,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.coverage_name"
+          },
+          {
+            "name": "enrolled_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "vitals_taken",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.enrolled_status"
+          },
+          {
+            "name": "taken_by",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "wait_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "check_in_date__time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "check_in_by",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "check_out_date__time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "check_out_by",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "priority",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "referal_data.priority"
+          },
+          {
+            "name": "visit_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "emergency_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      },
+      "staff_wait_time": {
+        "row_count": 200,
+        "column_count": 8,
+        "primary_key": "clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "staff_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "sex",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.sex"
+          },
+          {
+            "name": "department",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "role",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "speciality",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "rank",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      },
+      "referal_data": {
+        "row_count": 200,
+        "column_count": 14,
+        "primary_key": "patient_clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "patient_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "sex",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.sex"
+          },
+          {
+            "name": "age",
+            "type": "TINYINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "consaltation_date_and_time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_clinify_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "referred_by_speciality",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.assigned_to_speciality"
+          },
+          {
+            "name": "referred_by_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "referred_by_facility_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "appointment.facility_name"
+          },
+          {
+            "name": "referred_to_speciality",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.assigned_to_speciality"
+          },
+          {
+            "name": "referred_to_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "referred_to_facility_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "appointment.facility_name"
+          },
+          {
+            "name": "priority",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.priority"
+          }
+        ]
+      },
+      "appointment": {
+        "row_count": 200,
+        "column_count": 21,
+        "primary_key": "patient_clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "appointment_date_time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "booked_by",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "booked_for",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "duration",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "email_sms_whatsup_confirmation",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "category",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "service_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "service_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "staff_speciality",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "staff_wait_time.department"
+          },
+          {
+            "name": "staff_role",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "staff.role"
+          },
+          {
+            "name": "staff_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "delivery_method",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "priority",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_phone_number",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_email_address",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_type",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "facility_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "referal_data.referred_by_facility_name"
+          }
+        ]
+      },
+      "actions": {
+        "row_count": 200,
+        "column_count": 11,
+        "primary_key": "clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "age",
+            "type": "TINYINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "appointment_start_date___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "appointment_end_date___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "duration_hh_mm_ss_",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "assigned_to_speciality",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "staff.department"
+          },
+          {
+            "name": "assigned_to_role",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "staff.role"
+          },
+          {
+            "name": "assigned_to_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "priorty",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.priority"
+          }
+        ]
+      },
+      "inpatient": {
+        "row_count": 200,
+        "column_count": 17,
+        "primary_key": "patient_clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "admissiond_date___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "admitted_by",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "discharge_date___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "discharge_by",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "admission_diagnosis",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "nursing_diagnosis",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "bill_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "out_patient.bill_status"
+          },
+          {
+            "name": "admission_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "admission_ward_name__bed_no_",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "days_admitted",
+            "type": "TINYINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "staff.month"
+          },
+          {
+            "name": "priority",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_wait_time.priority"
+          },
+          {
+            "name": "billing_date___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "billing_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "facility_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "referal_data.referred_by_facility_name"
+          }
+        ]
+      },
+      "out_patient": {
+        "row_count": 200,
+        "column_count": 12,
+        "primary_key": "patient_clinify_id",
+        "columns": [
+          {
+            "name": "s_n",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "consaltation_data___time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "doctors_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "speciality",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "staff.department"
+          },
+          {
+            "name": "patient_clinify_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "patient_full_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "provisional_diagnosis",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "final_diagnosis",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "bill_status",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "inpatient.bill_status"
+          },
+          {
+            "name": "billing_date__time",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "billing_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "facility_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "referal_data.referred_by_facility_name"
+          }
+        ]
+      },
+      "work": {
+        "row_count": 200,
+        "column_count": 3,
+        "primary_key": "work_request",
+        "columns": [
+          {
+            "name": "work_request",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "work_order",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "pending_ppm",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.enrolled_status"
+          }
+        ]
+      },
+      "supply_inventory": {
+        "row_count": 200,
+        "column_count": 12,
+        "primary_key": "vendor_contact",
+        "columns": [
+          {
+            "name": "item_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "category",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "vendor_name",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "vendor_contact",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": true,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "procurement_order_id",
+            "type": "VARCHAR",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "quantity_ordered",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "unit_price",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "total_cost",
+            "type": "DECIMAL(10,2)",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "stock_level",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          },
+          {
+            "name": "reorder_level",
+            "type": "SMALLINT",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": true,
+            "references": "patient_registration.s_n"
+          },
+          {
+            "name": "date",
+            "type": "DATETIME",
+            "nullable": false,
+            "primary_key": false,
+            "foreign_key": false,
+            "references": null
+          }
+        ]
+      }
+    }
+  }
+}
